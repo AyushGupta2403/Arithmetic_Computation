@@ -6,3 +6,5 @@ read -p "Enter the third input" c
 
 #Performing operations
 echo $(($a+$b*$c))
+#Performing operation number 2
+echo $(($a*$b+$c))
