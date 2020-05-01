@@ -33,7 +33,7 @@ do
 done
 echo ${array[@]}
 
-#sorting in descending order 
+#Sorting in descending order 
 
 for (( index=0;index<${#allOperation[@]};index++ ))
 do
@@ -48,4 +48,21 @@ do
 	done
 done
 echo "Operation Result In Descending Order :"
+echo ${array[@]}
+
+#Sorting in ascending order
+
+for (( index=0;index<${#allOperation[@]};index++ ))
+do
+   for (( secondindex=0;secondindex<${#allOperation[@]}-1;secondindex++ ))
+   do
+      if (($(echo "${array[secondindex]} > ${array[secondindex+1]}" | bc -l) ))
+         then
+         temp=${array[secondindex]}
+         array[secondindex]=${array[secondindex+1]}
+         array[secondindex+1]=$temp
+      fi
+   done
+done
+echo "Operation Result In Ascending Order :"
 echo ${array[@]}
