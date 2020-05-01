@@ -10,3 +10,5 @@ echo $(($a+$b*$c))
 echo $(($a*$b+$c))
 #Performing operation number 3
 echo $(($c+$a/$b))
+#Performing operation number 4
+echo $(($a%$b+$c))
