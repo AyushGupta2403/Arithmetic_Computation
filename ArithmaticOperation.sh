@@ -5,10 +5,23 @@ read -p "Enter the second input" b
 read -p "Enter the third input" c
 
 #Performing operations
-echo $(($a+$b*$c))
+operation1=$(($a+$b*$c))
 #Performing operation number 2
-echo $(($a*$b+$c))
+operation2=$(($a*$b+$c))
 #Performing operation number 3
-echo $(($c+$a/$b))
+operation3=`echo "scale=2; $c+$a/$b" | bc`
 #Performing operation number 4
-echo $(($a%$b+$c))
+operation4=`echo "scale=2; $a%$b+$c" | bc`
+
+echo $operation1
+echo $operation2
+echo $operation3
+echo $operation4
+
+#Storing operation in a dictionary
+
+declare -A allOperation
+allOperation[operation1]=$operation1
+allOperation[operation2]=$operation2
+allOperation[operation3]=$operation3
+allOperation[operation4]=$operation4
