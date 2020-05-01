@@ -25,3 +25,10 @@ allOperation[operation1]=$operation1
 allOperation[operation2]=$operation2
 allOperation[operation3]=$operation3
 allOperation[operation4]=$operation4
+
+#Storing value of dictionary to array
+for (( index=0; index<${#allOperation[@]}; index++ ))
+do
+   array[index]=${allOperation[operation$((index+1))]}
+done
+echo ${array[@]}
